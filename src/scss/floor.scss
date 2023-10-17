@@ -1,0 +1,26 @@
+#floor {
+    width: 400px;
+    height: 1000px;
+    // height: 1500px;
+    // width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // transform: rotate3d(1, 0, 0, 63deg) rotate3d(0, 0, 1, 34deg)
+    //   translate3d(-152px, -117px, -141px) scale3d(0.75, 0.75, 0.75);
+    transform: rotate3d(1, 0, 0, 63deg) rotate3d(0, 0, 1, 34deg)
+        translate3d(-152px, -117px, -141px) scale3d(1, 1, 1);
+    transform-style: preserve-3d;
+    transform-origin: center center;
+  
+    > .texture {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    
+        > img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

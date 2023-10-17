@@ -1,0 +1,97 @@
+#window {
+    --do-damp: 1;
+    transform: rotate3d(1, 0, 0, -90deg) translate3d(0, -49%, 0px) scaleY(1.5)
+      scaleX(2);
+    transform-style: preserve-3d;
+    width: 100%;
+  
+    .contents {
+        transform: scaleY(0.75) scaleX(0.5) translateY(23px);
+        height: 72%;
+        width: 100%;
+    }
+  
+    > .texture {
+        transform-style: preserve-3d;
+    
+        img {
+            width: 100%;
+            transition: transform 0.3s ease-in-out;
+            transition-property: transform, opacity, filter;
+    
+            &:first-child {
+                position: absolute;
+                opacity: 1;
+                transform: translate3d(0, 0, -1px);
+            }
+    
+            &:nth-child(2) {
+                opacity: 1;
+                filter: blur(0px) brightness(1) saturate(1)
+                    drop-shadow(0px 0px 2px #161a21cf);
+                transform: translate3d(0px, 0px, 5px);
+            }
+        }
+    }
+  
+    &:hover,
+    &.force-expand {
+        --do-damp: 0;
+    
+        #kinect {
+            transform:translateZ(40px);
+        }
+    
+        + #viewline1 + #viewline2 {
+            --vl2-scale: 1;
+        }
+    
+        > .texture {
+            // box-shadow: inset 0px 0px 0px 4px #229bdd; */
+    
+            > img {
+                &:first-child {
+                    opacity: 0;
+                    filter: blur(10px) brightness(0.7) saturate(0.5);
+                    transform: translate3d(0, 0px, 50px);
+                }
+        
+                &:nth-child(2) {
+                    opacity: 0;
+                    filter: blur(10px) brightness(0.7) saturate(0.5)
+                    drop-shadow(0px 0px 2px #161a21cf);
+                    transform: translate3d(0, 0px, 200px);
+                }
+            }
+        }
+  
+        .contents {
+            .layer {
+                .texture {
+                    // filter: drop-shadow(0px 0px 8px #2f5aff);
+                    filter: drop-shadow(0px 0px 10px #161a21);
+                }
+            }
+    
+            #layer1 {
+                --backset: calc(-100px * 0.5);
+            }
+    
+            #layer2 {
+                --backset: calc(-200px * 0.5);
+            }
+    
+            #layer3 {
+                --backset: calc(-300px * 0.5);
+            }
+    
+            #layer4 {
+                --backset: calc(-400px * 0.5);
+            }
+    
+            #layer5 {
+                --backset: calc(-500px * 0.5);
+            }
+        }
+    }
+}

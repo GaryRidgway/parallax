@@ -1,0 +1,56 @@
+#kinect {
+    position: absolute;
+    left: 50%;
+    transform:translateZ(0px);
+    transform-origin: top center;
+    transform-style: preserve-3d;
+    transition: all 0.3s ease-in-out;
+    transition-property: transform;
+
+    .kinect-inner {
+        transform: translateX(-50%) translateZ(0px) rotate3d(1, 0, 0, -22deg)
+          scale3d(0.1, 0.1, 0.1);
+        transform-origin: top center;
+        transform-style: preserve-3d;
+    }
+  
+    .front {
+        img {
+            width: 3619px * 0.2;
+            height: 540px * 0.2;
+        }
+    }
+  
+    .left,
+    .right {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        transform-origin: top left;
+        transform: rotate3d(0, 1, 0, 90deg);
+    
+        img {
+            width: 848px * 0.2;
+            height: 540px * 0.2;
+        }
+    }
+  
+    .right {
+        left: 0%;
+        transform-origin: top left;
+        transform: rotate3d(0, 1, 0, 90deg);
+    }
+  
+    .top {
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        transform-origin: bottom center;
+        transform: rotate3d(1, 0, 0, 90deg);
+    
+        img {
+            width: 3619px * 0.2;
+            height: 848px * 0.2;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+#controls {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background-color: white;
+    border: 1px solid #434343;
+    display: flex;
+  
+    .control-container {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 20px;
+        border: 1px solid #434343;
+    }
+  
+    #personPosition {
+        width: 400px;
+    }
+  }
