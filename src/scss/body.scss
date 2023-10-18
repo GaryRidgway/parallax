@@ -1,6 +1,8 @@
 body {
     --person-position: 0px;
     --angle: -0deg;
+    --distance: 333px;
+    --hypot: var(--distance);
     height: 100vh;
     margin: 0;
     display: flex;
@@ -23,11 +25,16 @@ body {
         }
         
         #floor {
-            transform: rotate3d(1, 0, 0, 82deg)
-            rotate3d(0, 0, 1, calc(var(--angle) * -1))
-            translate3d(calc((var(--person-position) + 0.8px) * -0.6), 288px, 701px)
-            translateZ(-77px);
-            transform-origin: center bottom 383px;
+            // transform: rotate3d(1, 0, 0, 82deg)
+            // rotate3d(0, 0, 1, calc(var(--angle) * -1))
+            // translate3d(calc((var(--person-position) + 0.8px) * -0.6), 288px, 701px)
+            // translate3d(calc((var(--person-position) + 0.8px) * -0.6), 613px, 777.292px)            translateZ(-77px);
+            transform:
+                rotate3d(1, 0, 0, 82deg)
+                rotate3d(0, 0, 1, calc(var(--angle) * -1))
+                translate3d(calc((var(--person-position) + 0.8px) * -0.8 + 0.4px), 617px, 734.251px)
+                translateZ(-77px);
+            transform-origin: center bottom var(--distance);
         
             #person {
                 opacity: 0;

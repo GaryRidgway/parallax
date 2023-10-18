@@ -93,8 +93,10 @@ function triggerFPAnimation() {
 
 function slidePerson() {
     const pos = personSlider.value;
+    const distance = parseFloat(getComputedStyle(body).getPropertyValue("--distance"));
   
     body.style.setProperty("--person-position", pos + "px");
+    body.style.setProperty("--hypot", hypot(distance, pos) + "px");
     const angle = -(calcAngleDegrees(pos, -354) + 90);
     lines.forEach(function (line) {
       body.style.setProperty("--angle", angle + "deg");
@@ -109,25 +111,25 @@ function slidePerson() {
     // Above not working yet.
     const doDamp = 1;
   
-    const x1Damp = doDamp > 0 ? 0.5 : 1;
+    const x1Damp = doDamp > 0 ? 0.35 : 1;
     const x1 = calcPlanePos(100, angle + 90) / x1Damp;
-    layer1Tex.style.setProperty("--lateral", x1 + "px");
+    layer1Tex.style.setProperty("--lateral", -x1 + "px");
   
     const x2Damp = doDamp > 0 ? 1.75 : 1;
     const x2 = calcPlanePos(200, angle + 90) / x2Damp;
-    layer2Tex.style.setProperty("--lateral", x2 + "px");
+    layer2Tex.style.setProperty("--lateral", -x2 + "px");
   
     const x3Damp = doDamp > 0 ? 5 : 1;
     const x3 = calcPlanePos(300, angle + 90) / x3Damp;
-    layer3Tex.style.setProperty("--lateral", x3 + "px");
+    layer3Tex.style.setProperty("--lateral", -x3 + "px");
   
     const x4Damp = doDamp > 0 ? 15 : 1;
     const x4 = calcPlanePos(400, angle + 90) / x4Damp;
-    layer4Tex.style.setProperty("--lateral", x4 + "px");
+    layer4Tex.style.setProperty("--lateral", -x4 + "px");
   
     const x5Damp = doDamp > 0 ? 30 : 1;
     const x5 = calcPlanePos(500, angle + 90) / x5Damp;
-    layer5Tex.style.setProperty("--lateral", x5 + "px");
+    layer5Tex.style.setProperty("--lateral", -x5 + "px");
   }
 
   function calcAngleDegrees(x, y) {
@@ -148,4 +150,13 @@ function slidePerson() {
     const tanang = y / Math.tan(-rads);
   
     return tanang;
+  }
+
+  function hypot(a, b) {
+    console.log(a, b);
+    const leftSum = Math.pow(a, 2) + Math.pow(b, 2);
+    console.log(leftSum);
+    const c = Math.sqrt(leftSum);
+    console.log(c);
+    return c;
   }

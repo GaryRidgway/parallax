@@ -5,8 +5,8 @@
     transform: translate3d(0px, 0px, var(--backset));
     transition: transform 0.3s ease-in-out;
     transition-property: transform;
-    height: 100%;
-    width: 100%;
+    height: 74%;
+    top: 7%;
   
     .texture {
         height: 100%;
@@ -19,7 +19,6 @@
         img {
             height: 100%;
             width: auto;
-            transform: scaleX(-1);
         }
     }
 }
