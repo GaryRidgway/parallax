@@ -2,7 +2,8 @@ body {
     --person-position: 0px;
     --angle: -0deg;
     --distance: 333px;
-    --hypot: var(--distance);
+    --distanceF: 333;
+    --hypot: var(--distanceF);
     height: 100vh;
     margin: 0;
     display: flex;

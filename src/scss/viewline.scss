@@ -31,7 +31,10 @@
             height: 100%;
             opacity: 0.8;
             transform-origin: top center;
-            transform: rotate3d(0, 1, 0, var(--depth-rotation));
+            transform: 
+                scaleY(0.71) 
+                scaleY(calc(var(--hypot) / var(--distanceF))) 
+                rotate3d(0, 1, 0, var(--depth-rotation));
         }
     
         .line2 {

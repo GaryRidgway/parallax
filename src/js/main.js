@@ -1,4 +1,4 @@
-let vp;
+
 let scrollDiff;
 let scrollOffset;
 let scrollDampening;
@@ -20,7 +20,6 @@ let layer5Tex;
 
 document.addEventListener("DOMContentLoaded", function(event) { 
     //do work
-    vp = document.getElementById("viewport");
     scrollDiff = 0;
     scrollOffset = -200;
     scrollDampening = 1;
@@ -40,39 +39,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     layer4Tex = document.querySelector("#layer4 .texture");
     layer5Tex = document.querySelector("#layer5 .texture");
 
-    setTransform3dZ(vp);
-
-    vp.addEventListener(
-    "mousewheel",
-    function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-        scrollDiff += event.wheelDelta / scrollDampening;
-        setTransform3dZ(vp);
-    },
-    false
-    );
+    initMovement()
 
     goFirstPerson();
 });
-
-function setTransform3dZ(element) {
-    const min = -3200;
-    const max = 640;
-    scrollDiff = minmax(min, scrollDiff, max);
-    let scrollFinal = scrollDiff + scrollOffset;
-    element.style.transform = "translate3d(0px, 0px, " + scrollFinal + "px)";
-  }
-
-function minmax(min, val, max) {
-    if (val < min) {
-        return min;
-    } else if (val > max) {
-        return max;
-    } else {
-        return val;
-    }
-}
 
 function goFirstPerson() {
     // If the checkbox is checked, display the output text
@@ -96,7 +66,7 @@ function slidePerson() {
     const distance = parseFloat(getComputedStyle(body).getPropertyValue("--distance"));
   
     body.style.setProperty("--person-position", pos + "px");
-    body.style.setProperty("--hypot", hypot(distance, pos) + "px");
+    body.style.setProperty("--hypot", hypot(distance, pos));
     const angle = -(calcAngleDegrees(pos, -354) + 90);
     lines.forEach(function (line) {
       body.style.setProperty("--angle", angle + "deg");
