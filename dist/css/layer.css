@@ -1,0 +1,34 @@
+.layer {
+  --backset: 1px;
+  --lateral: 0px;
+  position: absolute;
+  transform: translate3d(0px, 0px, var(--backset));
+  transition: transform 0.3s ease-in-out;
+  transition-property: transform;
+  height: 74%;
+  top: 7%; }
+  .layer .texture {
+    height: 100%;
+    width: 100%;
+    filter: drop-shadow(0px 0px 8px #161a2178);
+    transform: translateX(var(--lateral));
+    transition: all 0.3s ease-in-out;
+    transition-property: filter; }
+    .layer .texture img {
+      height: 100%;
+      width: auto; }
+
+#layer1 {
+  --backset: -5px; }
+
+#layer2 {
+  --backset: -7px; }
+
+#layer3 {
+  --backset: -8px; }
+
+#layer4 {
+  --backset: -9px; }
+
+#layer5 {
+  --backset: -10px; }

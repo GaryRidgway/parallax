@@ -1,0 +1,24 @@
+#standingline {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  bottom: -211px;
+  transform: scaleY(0.5);
+  transform-style: preserve-3d; }
+  #standingline .slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform: translateZ(1px); }
+  #standingline > .texture {
+    width: 100%;
+    height: 100px;
+    overflow: hidden; }
+    #standingline > .texture img {
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      position: relative;
+      bottom: 89px; }
