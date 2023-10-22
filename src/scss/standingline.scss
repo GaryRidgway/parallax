@@ -1,9 +1,9 @@
 #standingline {
     width: 100%;
-    height: 100px;
+    height: 65px;
     position: absolute;
-    bottom: -211px;
-    transform: scaleY(0.5);
+    bottom: -156px;
+    overflow: hidden;
     transform-style: preserve-3d;
   
     .slider {
@@ -19,6 +19,7 @@
         width: 100%;
         height: 100px;
         overflow: hidden;
+        transform: scaleY(1) scaleX(2);
     
         img {
             width: 100%;

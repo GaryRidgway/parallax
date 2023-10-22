@@ -4,13 +4,29 @@ body {
     --distance: 333px;
     --distanceF: 333;
     --hypot: var(--distanceF);
+    --void: #ffdb00;
+    --container-width: 552px;
+    --container-height: 399px;
+    --tv-border-lr: 214px;
+    --tv-border-tb: 32px;
+    --tv-glow-size: 20px;
+    --bevel-scale: 10px;
+    --bevel-offset: calc(var(--tv-glow-size) * 0.5);
+    --bg-color: var(--body-bg);
+    --tv-bevel-color: #434343;
+    --tv-bevel-color-inner: #1b1b1b;
+    --tv-bevel-color-outer: #696969;
+    --image-backset-offset: 8px;
+    --glow-transparency: 0.1;
+    --tv-scale: 1;
+
     height: 100vh;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     perspective: 800px;
-    background-color: #e6e8ea;
+    background-color: var(--void);
     overflow: hidden;
 
     &.transitory {
@@ -44,6 +60,15 @@ body {
             .viewline {
                 opacity: 0;
             }
+        }
+
+
+
+        #tv-box .face {
+            &.right, &.top {
+                opacity: 1;
+            }
+
         }
     }
 }

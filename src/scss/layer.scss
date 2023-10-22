@@ -1,5 +1,5 @@
 .layer {
-    --backset: 1px;
+    --backset: var(--image-backset-offset);
     --lateral: 0px;
     position: absolute;
     transform: translate3d(0px, 0px, var(--backset));
@@ -21,24 +21,26 @@
             width: auto;
         }
     }
+
+    
 }
   
 #layer1 {
-    --backset: -5px;
+    --backset: calc((var(--image-backset-offset) + 1px) * -1);
 }
 
 #layer2 {
-    --backset: -7px;
+    --backset: calc((var(--image-backset-offset) + 2px) * -1);
 }
 
 #layer3 {
-    --backset: -8px;
+    --backset: calc((var(--image-backset-offset) + 3px) * -1);
 }
 
 #layer4 {
-    --backset: -9px;
+    --backset: calc((var(--image-backset-offset) + 4px) * -1);
 }
 
 #layer5 {
-    --backset: -10px;
+    --backset: calc((var(--image-backset-offset) + 5px) * -1);
 }

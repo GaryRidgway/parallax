@@ -1,6 +1,6 @@
 #viewport {
-  --x: 0px;
-  --y: 0px;
+  --x: -8px;
+  --y: 143px;
   --zoom: 0px;
   perspective: 650px;
   width: 100%;

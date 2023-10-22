@@ -1,7 +1,3 @@
-
-let scrollDiff;
-let scrollOffset;
-let scrollDampening;
 // Get the checkbox
 let fpCheckBox;
 let eCheckBox;
@@ -20,9 +16,6 @@ let layer5Tex;
 
 document.addEventListener("DOMContentLoaded", function(event) { 
     //do work
-    scrollDiff = 0;
-    scrollOffset = -200;
-    scrollDampening = 1;
     // Get the checkbox
     fpCheckBox = document.getElementById("firstPerson");
     eCheckBox = document.getElementById("expand");
@@ -39,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     layer4Tex = document.querySelector("#layer4 .texture");
     layer5Tex = document.querySelector("#layer5 .texture");
 
-    initMovement()
+    initMovement();
 
     goFirstPerson();
 });

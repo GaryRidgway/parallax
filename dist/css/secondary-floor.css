@@ -1,0 +1,51 @@
+.secondary-floor {
+  position: absolute;
+  width: 400px;
+  height: 1000px; }
+  .secondary-floor > .texture {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; }
+    .secondary-floor > .texture > img {
+      height: 100%;
+      object-fit: cover; }
+  .secondary-floor[data-x="1"] {
+    left: 399px; }
+  .secondary-floor[data-x="2"] {
+    left: 798px; }
+  .secondary-floor[data-x="3"] {
+    left: 1197px; }
+  .secondary-floor[data-x="4"] {
+    left: 1596px; }
+  .secondary-floor[data-x="5"] {
+    left: 1995px; }
+  .secondary-floor[data-x="6"] {
+    left: 2394px; }
+  .secondary-floor[data-x="7"] {
+    left: 2793px; }
+  .secondary-floor[data-x="8"] {
+    left: 3192px; }
+  .secondary-floor[data-x="9"] {
+    left: 3591px; }
+  .secondary-floor[data-x="10"] {
+    left: 3990px; }
+  .secondary-floor[data-x="-1"] {
+    left: -399px; }
+  .secondary-floor[data-x="-2"] {
+    left: -798px; }
+  .secondary-floor[data-x="-3"] {
+    left: -1197px; }
+  .secondary-floor[data-x="-4"] {
+    left: -1596px; }
+  .secondary-floor[data-x="-5"] {
+    left: -1995px; }
+  .secondary-floor[data-x="-6"] {
+    left: -2394px; }
+  .secondary-floor[data-x="-7"] {
+    left: -2793px; }
+  .secondary-floor[data-x="-8"] {
+    left: -3192px; }
+  .secondary-floor[data-x="-9"] {
+    left: -3591px; }
+  .secondary-floor[data-x="-10"] {
+    left: -3990px; }

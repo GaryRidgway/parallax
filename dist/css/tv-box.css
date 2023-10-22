@@ -1,0 +1,64 @@
+#tv-box {
+  position: absolute;
+  transform-style: preserve-3d;
+  --dim-w: 597px;
+  --dim-h: 397px;
+  --dim-d: 397px;
+  --dim-lr-offset:calc((var(--dim-w) - var(--dim-d)) / 2); }
+  #tv-box .tv-box-inner {
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center; }
+  #tv-box .face {
+    position: absolute; }
+  #tv-box .bottom, #tv-box .top {
+    width: var(--dim-w);
+    height: var(--dim-d);
+    transform-style: preserve-3d;
+    background-color: #434343;
+    transform-origin: center bottom;
+    transform: rotate3d(1, 0, 0, 90deg); }
+  #tv-box .top {
+    transform-origin: center top;
+    transform: rotate3d(1, 0, 0, -90deg);
+    transition: all 0.3s ease-in-out;
+    transition-property: opacity;
+    opacity: 0; }
+  #tv-box .left, #tv-box .right {
+    width: var(--dim-d);
+    height: var(--dim-h);
+    background-color: #434343;
+    transform-origin: top left;
+    transform: rotate3d(0, 1, 0, 90deg) translate3d(0px, 0px, calc(var(--dim-lr-offset) * -1)); }
+  #tv-box .right {
+    transform-origin: top right;
+    transform: rotate3d(0, 1, 0, -90deg) translate3d(0px, 0px, calc(var(--dim-lr-offset) * -1));
+    transition: all 0.3s ease-in-out;
+    transition-property: opacity;
+    opacity: 0; }
+  #tv-box .right-mask {
+    height: var(--dim-d);
+    width: 1000px;
+    background-color: var(--void);
+    left: calc(var(--dim-w) * 0.5 - 1px);
+    transform-origin: left bottom;
+    transform: rotateX(90deg); }
+  #tv-box .back {
+    height: var(--dim-h);
+    width: var(--dim-w);
+    background-color: #434343;
+    transform: translate3d(0px, 0px, calc(var(--dim-d) * -1)); }
+  #tv-box .front {
+    mask: url(#mask-linear);
+    height: var(--dim-h);
+    width: var(--dim-w);
+    background-color: var(--void);
+    transform: translateY(var(--dim-h)) translateZ(-1px); }
+  #tv-box .top-mask {
+    height: var(--dim-d);
+    width: calc(var(--dim-w) * 10);
+    background-color: var(--void);
+    bottom: 100%;
+    transform: translateY(0px);
+    transition: all 0.3s ease-in-out;
+    transition-property: transform; }

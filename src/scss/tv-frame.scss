@@ -1,0 +1,187 @@
+#tv-frame {
+    height: calc(var(--container-height) - 2 * var(--tv-border-tb));
+    width: calc(var(--container-width) - 2 * var(--tv-border-lr));
+    border: 1px solid var(--void);
+    border-width: var(--tv-border-tb) var(--tv-border-lr);
+    transform: translateY(10px) translateZ(-10px) scale(var(--tv-scale), var(--tv-scale));
+    transition: all 0.3s ease-in-out;
+    transition-property: border-width, width, height, transform;
+    transform-style: preserve-3d;
+
+    .glow {
+        position: absolute;
+        border: 0.5px solid transparent;
+        width: calc(100% - 2px);
+        height: calc(100% - 3px);
+        transform-style: preserve-3d;
+        background: rgb(240,253,255);
+        background: linear-gradient(
+            45deg,
+            rgba(240,253,255,calc(var(--glow-transparency) * 0.5)) 0%,
+            rgba(240,253,255,calc(var(--glow-transparency) * 4)) 61%,
+            rgba(240,253,255,var(--glow-transparency)) 63%,
+            rgba(240,253,255,var(--glow-transparency)) 73%,
+            rgba(240,253,255,calc(var(--glow-transparency) * 4)) 75%,
+            rgba(240,253,255,calc(var(--glow-transparency) * 0.5)) 100%
+        );
+
+        .glowbands {
+            opacity: 0.6;
+            animation-iteration-count: infinite;
+            animation-name: flicker;
+            animation-duration: 4s;
+            transition: linear opacity;
+        }
+
+        .top,
+        .bottom {
+            height: var(--tv-glow-size);
+            background-color: white;
+            transform: rotateX(90deg);
+            transform-origin: center top;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            background: rgb(238, 253, 254);
+            background: linear-gradient(
+                180deg,
+                rgba(238, 253, 254, 1) 5%,
+                rgba(255, 255, 255, 0.20211834733893552) 90%,
+                rgba(255, 255, 255, 0) 100%
+            );
+        }
+
+        .bottom {
+            bottom: 0;
+            transform-origin: center bottom;
+            transform: rotateX(90deg) translateY(var(--tv-glow-size));
+        }
+
+        .left,
+        .right {
+            height: 100%;
+            background-color: white;
+            transform: rotateY(-90deg);
+            transform-origin: left center;
+            position: absolute;
+            left: 0;
+            width: var(--tv-glow-size);
+
+            background: rgb(238, 253, 254);
+            background: linear-gradient(
+                90deg,
+                rgba(238, 253, 254, 1) 5%,
+                rgba(255, 255, 255, 0.20211834733893552) 90%,
+                rgba(255, 255, 255, 0) 100%
+            );
+        }
+
+        .right {
+            right: 0;
+            left: unset;
+            transform: rotateY(-90deg) translateZ(calc(var(--tv-glow-size) * -1));
+        }
+    }
+
+    .bevel {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: calc(var(--bevel-scale) * -1);
+        top: calc(var(--bevel-scale) * -1);
+        border: var(--bevel-scale) solid #434343;
+        transform: translateZ(var(--bevel-scale));
+        transform-style: preserve-3d;
+
+        .bevel {
+            transform: translateZ(calc(var(--bevel-scale) * -1));
+        }
+
+        .edge {
+            background-color: var(--tv-bevel-color);
+        }
+
+        .top,
+        .bottom {
+            position: absolute;
+            height: var(--bevel-scale);
+            left: 0;
+            width: 100%;
+            transform-origin: top;
+            transform: rotateX(-90deg);
+            background-color: var(--tv-bevel-color-inner);
+
+            &.out {
+                left: calc(var(--bevel-scale) * -1);
+                width: calc(100% + var(--bevel-scale) * 2);
+                top: calc(var(--bevel-scale) * -1);
+            }
+        }
+        .bottom {
+            bottom: 0%;
+            transform-origin: bottom;
+            transform: rotateX(90deg);
+
+            &.out {
+                top: unset;
+                bottom: calc(var(--bevel-scale) * -1);
+            }
+        }
+
+        .left,
+        .right {
+            position: absolute;
+            width: var(--bevel-scale);
+            height: 100%;
+            transform-origin: left;
+            transform: rotateY(90deg);
+            left: 0;
+            background-color: var(--tv-bevel-color-inner);
+
+            &.out {
+                left: calc(var(--bevel-scale) * -1);
+                height: calc(100% + var(--bevel-scale) * 2);
+                top: calc(var(--bevel-scale) * -1);
+                left: calc(var(--bevel-scale) * -1);
+                background-color: var(--tv-bevel-color-outer);
+            }
+        }
+        .right {
+            bottom: 0%;
+            transform-origin: left;
+            transform: rotateY(90deg);
+            left: unset;
+            right: calc(var(--bevel-scale) * -1);
+
+            &.out {
+                left: unset;
+                right: calc(var(--bevel-scale) * -2);
+                background-color: var(--tv-bevel-color-outer);
+            }
+        }
+    }
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 0.6;
+    }
+    14.29% {
+        opacity: 0.3;
+    }
+    28.58% {
+        opacity: 0.5;
+    }
+    42.87% {
+        opacity: 0.4;
+    }
+    57.16% {
+        opacity: 0.6;
+    }
+    71.45% {
+        opacity: 0.5;
+    }
+    85.74% {
+        opacity: 0.3;
+    }
+}

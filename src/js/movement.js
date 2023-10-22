@@ -4,6 +4,10 @@ let controlContainer;
 let vp;
 let floor;
 
+let scrollDiff;
+let scrollOffset;
+let scrollDampening;
+
 function controlDown(event) {
   isMouseDown = true;
   mouseStart = {
@@ -55,6 +59,10 @@ function initMovement() {
         controlDown(event);
     });
 
+
+    scrollDiff = 0;
+    scrollOffset = 320;
+    scrollDampening = 1;
     vp.addEventListener(
         "mousewheel",
         function (event) {

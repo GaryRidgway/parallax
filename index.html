@@ -17,14 +17,50 @@
     <link type="text/css" rel="stylesheet" href="./dist/css/kinect.css">
     <link type="text/css" rel="stylesheet" href="./dist/css/viewline.css">
     <link type="text/css" rel="stylesheet" href="./dist/css/layer.css">
+    <link type="text/css" rel="stylesheet" href="./dist/css/secondary-floor.css">
+    <link type="text/css" rel="stylesheet" href="./dist/css/tv-box.css">
+    <link type="text/css" rel="stylesheet" href="./dist/css/tv-frame.css">
 </head>
 
 <body>
+  <defs>
+    <mask id="mask-linear">
+      <rect width="400" height="300" fill="url(#l1)"></rect>
+      <linearGradient id="l1" x1="0" y1="0" x2="0" y2="1">
+        <stop stop-color="white" offset="0%"/>
+        <stop stop-color="black" offset="30%"/>
+        <stop stop-color="white" offset="100%"/>
+      </linearGradient>
+    </mask>
+    <filter id="filtre2">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+    </filter>
+  </defs>
   <div id='viewport' class='trigger'>
     <div id='floor'>
       <div class='contents'>
         <div id='window'>
           <div class='contents'>
+            <div id='tv-box'>
+              <div class='tv-box-inner'>
+                <div class='face front'>
+                </div>
+                <div class='face back'>
+                </div>
+                <div class='face left'>
+                </div>
+                <div class='face right'>
+                </div>
+                <div class='face right-mask'>
+                </div>
+                <div class='face top'>
+                </div>
+                <div class='face bottom'>
+                </div>
+                <div class='face top-mask'>
+                </div>
+              </div>
+            </div>
             <div id='kinect'>
               <div class='kinect-inner'>
                 <div class='front'>
@@ -66,12 +102,38 @@
                 <img src='src/assets/layer5.png'>
               </div>
             </div>
+            <div id="tv-frame">
+              <div class='glow'>
+                <div class='glowbands top'></div>
+                <div class='glowbands right'></div>
+                <div class='glowbands bottom'></div>
+                <div class='glowbands left'></div>
+              </div>
+              <div class='bevel'>
+                <div class='bevel'></div>
+                <div class='edge top in'></div>
+                <div class='edge top out'></div>
+                <div class='edge right in'></div>
+                <div class='edge right out'></div>
+                <div class='edge bottom in'></div>
+                <div class='edge bottom out'></div>
+                <div class='edge left in'></div>
+                <div class='edge left out'></div>
+              </div>
+            </div>
           </div>
           <div class='texture'>
-            <img src='src/assets/SmokeStackWindowOpen.png'>
+            <img class='openwindow' data-x="0" src='src/assets/SmokeStackWindowOpen.png'>
             <img src='src/assets/LancetWindowBordered.png'>
-            <!-- <img class="wallslat" src='src/assets/SmokeStackWall_cleanup-transformed.png'>
-            <img class="wallslat" src='src/assets/SmokeStackWall2_cleanup-transformed.png'> -->
+            <img class="wallslat" data-x="1" src='src/assets/SmokeStackWall2_cleanup-transformed.png'>
+            <img class="wallslat" data-x="2" src='src/assets/SmokeStackWall_cleanup-transformed.png'>
+            <img class="wallslat" data-x="3" src='src/assets/SmokeStackWall2_cleanup-transformed.png'>
+            <img class="wallslat" data-x="4" src='src/assets/SmokeStackWall_cleanup-transformed.png'>
+            <img class="wallslat" data-x="-1" src='src/assets/SmokeStackWall2_cleanup-transformed.png'>
+            <img class="wallslat" data-x="-2" src='src/assets/SmokeStackWall_cleanup-transformed.png'>
+            <img class="wallslat" data-x="-3" src='src/assets/SmokeStackWall2_cleanup-transformed.png'>
+            <img class="wallslat" data-x="-4" src='src/assets/SmokeStackWall_cleanup-transformed.png'>
+            <img class="wallslat" data-x="-5" src='src/assets/SmokeStackWall2_cleanup-transformed.png'>
           </div>
         </div>
         <div id='viewline1' class='viewline'>
@@ -100,6 +162,48 @@
           <div class='texture'>
             <img src='src/assets/warningStripes.jpeg'>
   
+          </div>
+        </div>
+        <div class='secondary-floor' data-x="1">
+          <div class='contents'>
+          </div>
+          <div class='texture'>
+            <img src='src/assets/woodFloorHD.png'>
+          </div>
+        </div>
+        <div class='secondary-floor' data-x="2">
+          <div class='contents'>
+          </div>
+          <div class='texture'>
+            <img src='src/assets/woodFloorHD.png'>
+          </div>
+        </div>
+        <div class='secondary-floor' data-x="-1">
+          <div class='contents'>
+          </div>
+          <div class='texture'>
+            <img src='src/assets/woodFloorHD.png'>
+          </div>
+        </div>
+        <div class='secondary-floor' data-x="-2">
+          <div class='contents'>
+          </div>
+          <div class='texture'>
+            <img src='src/assets/woodFloorHD.png'>
+          </div>
+        </div>
+        <div class='secondary-floor' data-x="-3">
+          <div class='contents'>
+          </div>
+          <div class='texture'>
+            <img src='src/assets/woodFloorHD.png'>
+          </div>
+        </div>
+        <div class='secondary-floor' data-x="-4">
+          <div class='contents'>
+          </div>
+          <div class='texture'>
+            <img src='src/assets/woodFloorHD.png'>
           </div>
         </div>
       </div>
