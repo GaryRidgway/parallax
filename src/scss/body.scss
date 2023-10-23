@@ -4,7 +4,7 @@ body {
     --distance: 333px;
     --distanceF: 333;
     --hypot: var(--distanceF);
-    --void: #385270;
+    --void: #374657;
     --container-width: 552px;
     --container-height: 399px;
     --tv-border-lr: 254px;
@@ -51,7 +51,7 @@ body {
                 rotate3d(1, 0, 0, 82deg)
                 rotate3d(0, 0, 1, calc(var(--angle) * -1))
                 translate3d(calc((var(--person-position) + 0.8px) * -0.8 + 0.4px), 617px, 734.251px)
-                translateZ(-77px);
+                translateZ(-175px);
             transform-origin: center bottom var(--distance);
         
             #person {
