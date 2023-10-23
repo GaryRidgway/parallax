@@ -71,7 +71,7 @@
             // box-shadow: inset 0px 0px 0px 4px #229bdd; */
     
             > img {
-                @for $i from -1 through 10 {
+                @for $i from -1 through 1 {
                     &[data-x="#{$i}"] {
                         transform: translate3d(0, 394px, 0px);
                     }
@@ -87,9 +87,9 @@
         }
 
         #tv-frame {
-            --tv-border-lr: 20px;
-            --tv-border-tb: 20px;
-            --tv-scale: 1.1;
+            --tv-border-lr: calc(-12px + var(--tv-border-buffer));
+            --tv-border-tb: calc(20px + var(--tv-border-buffer));
+            // --tv-scale: 2;
         }
   
         .contents {
@@ -119,10 +119,6 @@
             #layer5 {
                 --backset: calc(-500px * 0.5);
             }
-        }
-
-        .face.top-mask {
-            transform: translateY(-200px);
         }
     }
 }

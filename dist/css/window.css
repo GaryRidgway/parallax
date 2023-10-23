@@ -107,32 +107,13 @@
       transform: translate3d(0, 394px, 0px); }
     #window:hover > .texture > img[data-x="1"], #window.force-expand > .texture > img[data-x="1"] {
       transform: translate3d(0, 394px, 0px); }
-    #window:hover > .texture > img[data-x="2"], #window.force-expand > .texture > img[data-x="2"] {
-      transform: translate3d(0, 394px, 0px); }
-    #window:hover > .texture > img[data-x="3"], #window.force-expand > .texture > img[data-x="3"] {
-      transform: translate3d(0, 394px, 0px); }
-    #window:hover > .texture > img[data-x="4"], #window.force-expand > .texture > img[data-x="4"] {
-      transform: translate3d(0, 394px, 0px); }
-    #window:hover > .texture > img[data-x="5"], #window.force-expand > .texture > img[data-x="5"] {
-      transform: translate3d(0, 394px, 0px); }
-    #window:hover > .texture > img[data-x="6"], #window.force-expand > .texture > img[data-x="6"] {
-      transform: translate3d(0, 394px, 0px); }
-    #window:hover > .texture > img[data-x="7"], #window.force-expand > .texture > img[data-x="7"] {
-      transform: translate3d(0, 394px, 0px); }
-    #window:hover > .texture > img[data-x="8"], #window.force-expand > .texture > img[data-x="8"] {
-      transform: translate3d(0, 394px, 0px); }
-    #window:hover > .texture > img[data-x="9"], #window.force-expand > .texture > img[data-x="9"] {
-      transform: translate3d(0, 394px, 0px); }
-    #window:hover > .texture > img[data-x="10"], #window.force-expand > .texture > img[data-x="10"] {
-      transform: translate3d(0, 394px, 0px); }
     #window:hover > .texture > img:nth-child(2), #window.force-expand > .texture > img:nth-child(2) {
       opacity: 0;
       filter: blur(10px) brightness(0.7) saturate(0.5) drop-shadow(0px 0px 2px #161a21cf);
       transform: translate3d(0, 0px, 200px); }
     #window:hover #tv-frame, #window.force-expand #tv-frame {
-      --tv-border-lr: 20px;
-      --tv-border-tb: 20px;
-      --tv-scale: 1.1; }
+      --tv-border-lr: calc(-12px + var(--tv-border-buffer));
+      --tv-border-tb: calc(20px + var(--tv-border-buffer)); }
     #window:hover .contents .layer .texture, #window.force-expand .contents .layer .texture {
       filter: drop-shadow(0px 0px 10px #161a21); }
     #window:hover .contents #layer1, #window.force-expand .contents #layer1 {
@@ -145,5 +126,3 @@
       --backset: calc(-400px * 0.5); }
     #window:hover .contents #layer5, #window.force-expand .contents #layer5 {
       --backset: calc(-500px * 0.5); }
-    #window:hover .face.top-mask, #window.force-expand .face.top-mask {
-      transform: translateY(-200px); }

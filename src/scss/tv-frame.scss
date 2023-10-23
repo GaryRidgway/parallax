@@ -1,9 +1,21 @@
 #tv-frame {
-    height: calc(var(--container-height) - 2 * var(--tv-border-tb));
-    width: calc(var(--container-width) - 2 * var(--tv-border-lr));
+    height: calc(
+        var(--container-height)
+        - 2 * var(--tv-border-tb)
+        + 2 * var(--tv-border-buffer)
+    );
+    width: calc(
+        var(--container-width)
+        - 2 * var(--tv-border-lr)
+        + 2 * var(--tv-border-buffer)
+    );
     border: 1px solid var(--void);
     border-width: var(--tv-border-tb) var(--tv-border-lr);
-    transform: translateY(10px) translateZ(-10px) scale(var(--tv-scale), var(--tv-scale));
+    transform: 
+        translateY(calc(10px - var(--tv-border-buffer)))
+        // translateX(calc(var(--tv-border-buffer) * -0.5))
+        translateZ(-10px)
+        scale(var(--tv-scale), var(--tv-scale));
     transition: all 0.3s ease-in-out;
     transition-property: border-width, width, height, transform;
     transform-style: preserve-3d;
@@ -24,6 +36,10 @@
             rgba(240,253,255,calc(var(--glow-transparency) * 4)) 75%,
             rgba(240,253,255,calc(var(--glow-transparency) * 0.5)) 100%
         );
+        // transform: scale(
+        //     calc(1 / var(--tv-scale)),
+        //     calc(1 / var(--tv-scale))
+        // );
 
         .glowbands {
             opacity: 0.6;
@@ -92,6 +108,10 @@
         border: var(--bevel-scale) solid #434343;
         transform: translateZ(var(--bevel-scale));
         transform-style: preserve-3d;
+        // transform: scale(
+        //     calc(1 / var(--tv-scale)),
+        //     calc(1 / var(--tv-scale))
+        // );
 
         .bevel {
             transform: translateZ(calc(var(--bevel-scale) * -1));
