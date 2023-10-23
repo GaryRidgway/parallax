@@ -7,6 +7,9 @@ let floor;
 let scrollDiff;
 let scrollOffset;
 let scrollDampening;
+let zoomPercent = 0;
+const scrollMin = -1100;
+const scrollMax = 600;
 
 function controlDown(event) {
   isMouseDown = true;
@@ -61,30 +64,46 @@ function initMovement() {
 
 
     scrollDiff = 0;
-    scrollOffset = 320;
+    scrollOffset = 0;
     scrollDampening = 1;
     vp.addEventListener(
         "mousewheel",
         function (event) {
-            event.preventDefault();
-            event.stopPropagation();
-            scrollDiff += event.wheelDelta / scrollDampening;
-            setTransform3dZ(vp);
+          scrollZoom('mouse', event);
+          setTransform3dZ();
         },
         false
     );
 
 
-    setTransform3dZ(vp);
+    scrollZoom();
+    setTransform3dZ();
 }
 
+function setScrollControl(percent) {
+  zoomSlide.value = percent;
+}
 
-function setTransform3dZ(element) {
-    const min = -3200;
-    const max = 640;
-    scrollDiff = minmax(min, scrollDiff, max);
+function scrollZoom(type = null, event = null) {
+  if(type === 'mouse' && event) {
+    event.preventDefault();
+    event.stopPropagation();
+    scrollDiff += event.wheelDelta / scrollDampening;
+  }
+  else if(type === 'slide') {
+    scrollDiff = scale(zoomSlide.value, 0, 100, scrollMin, scrollMax);
+    setTransform3dZ();
+  }
+
+  if(type !== 'slide') {
+    scrollDiff = minmax(scrollMin, scrollDiff, scrollMax);
+    setScrollControl(scale(scrollDiff, scrollMin, scrollMax, 0, 100));
+  }
+}
+
+function setTransform3dZ() {
     let scrollFinal = scrollDiff + scrollOffset;
-    element.style.setProperty("--zoom", scrollFinal + "px");
+    vp.style.setProperty("--zoom", scrollFinal + "px");
 }
 
 function minmax(min, val, max) {
@@ -95,4 +114,8 @@ function minmax(min, val, max) {
     } else {
         return val;
     }
+}
+
+function scale (number, inMin, inMax, outMin, outMax) {
+  return (number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
 }

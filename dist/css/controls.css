@@ -18,6 +18,25 @@
       transform: scale(1.5); }
     #controls .control-container.slide {
       padding: 15px 55px; }
+      #controls .control-container.slide.zoom {
+        right: 25px;
+        position: fixed;
+        top: calc(50% - 200px);
+        transform-origin: right;
+        transform: translateZ(0px) rotate(-90deg);
+        width: 400px; }
+        #controls .control-container.slide.zoom input {
+          width: 100%; }
+      #controls .control-container.slide .in, #controls .control-container.slide .out {
+        position: absolute;
+        transform: rotate(90deg);
+        font-size: 1.8rem;
+        top: 12px;
+        color: #c4c4c4; }
+      #controls .control-container.slide .in {
+        right: 20px; }
+      #controls .control-container.slide .out {
+        left: 20px; }
     #controls .control-container.check {
       padding: 15px 30px; }
   #controls #personPosition {

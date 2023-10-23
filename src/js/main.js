@@ -1,6 +1,7 @@
 // Get the checkbox
 let fpCheckBox;
 let eCheckBox;
+let zoomSlide;
 let lancetWindow;
 // Get the output text
 let body;
@@ -19,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // Get the checkbox
     fpCheckBox = document.getElementById("firstPerson");
     eCheckBox = document.getElementById("expand");
+    zoomSlide = document.getElementById("zoom");
     lancetWindow = document.getElementById("window");
     // Get the output text
     body = document.querySelector("body");

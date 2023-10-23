@@ -24,6 +24,35 @@
 
         &.slide {
             padding: 15px 55px;
+
+            &.zoom {
+                right: 25px;
+                position: fixed;
+                top: calc(50% - 200px);
+                transform-origin: right;
+                transform: translateZ(0px) rotate(-90deg);
+                width: 400px;
+
+                input {
+                    width: 100%;
+                }
+            }
+
+            .in, .out {
+                position: absolute;
+                transform: rotate(90deg);
+                font-size: 1.8rem;
+                top: 12px;
+                color: #c4c4c4;
+            }
+
+            .in {
+                right: 20px;
+            }
+
+            .out {
+                left: 20px;
+            }
         }
 
         &.check {

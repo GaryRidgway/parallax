@@ -21,8 +21,9 @@
     <link type="text/css" rel="stylesheet" href="./dist/css/tv-box.css">
     <link type="text/css" rel="stylesheet" href="./dist/css/tv-frame.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Cinzel+Decorative&family=Major+Mono+Display&family=Raleway:wght@100&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Cinzel+Decorative&family=Major+Mono+Display&family=Raleway:wght@100&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 
 <body>
@@ -220,6 +221,15 @@
     <div class='control-container slide'>
       <label>Person position</label>
       <input type="range" min="-163" max="163" value="0" step='0.2' class="slider" id="personPosition" onchange="slidePerson();" oninput="slidePerson()">
+    </div>
+    <div class='control-container slide zoom'>
+      <span class="material-symbols-outlined in">
+        zoom_in
+        </span>
+      <input type="range" min="0" max="100" value="0" step='0.2' class="slider" id="zoom" onchange="scrollZoom('slide')" oninput="scrollZoom('slide')">
+      <span class="material-symbols-outlined out">
+        zoom_out
+        </span>
     </div>
   </div>
 
