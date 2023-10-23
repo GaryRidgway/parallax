@@ -6,7 +6,9 @@
   align-items: center;
   transform: translate3d(var(--x), var(--y), var(--zoom)) rotate3d(1, 0, 0, 63deg) rotate3d(0, 0, 1, 34deg) translate3d(-152px, -117px, -141px) scale3d(1, 1, 1);
   transform-style: preserve-3d;
-  transform-origin: center center; }
+  transform-origin: center center;
+  pointer-events: none;
+  user-select: none; }
   #floor > .texture {
     width: 100%;
     height: 100%;
