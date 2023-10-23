@@ -32,7 +32,8 @@ body {
     transition: transform 0.6s ease-in-out;
     transition-property: transform, opacity, filter, transform-origin; }
   body.first #viewport {
-    perspective: 650px; }
+    perspective: 650px;
+    cursor: inherit; }
   body.first #floor {
     transform: rotate3d(1, 0, 0, 82deg) rotate3d(0, 0, 1, calc(var(--angle) * -1)) translate3d(calc((var(--person-position) + 0.8px) * -0.8 + 0.4px), 617px, 734.251px) translateZ(-175px);
     transform-origin: center bottom var(--distance); }
@@ -40,5 +41,8 @@ body {
       opacity: 0; }
     body.first #floor .viewline {
       opacity: 0; }
+  body.first #controls .slide.zoom {
+    filter: contrast(1.5) saturate(0);
+    opacity: 0.4; }
   body.first #tv-box .face.right, body.first #tv-box .face.top {
     opacity: 1; }

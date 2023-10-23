@@ -85,19 +85,21 @@ function setScrollControl(percent) {
 }
 
 function scrollZoom(type = null, event = null) {
-  if(type === 'mouse' && event) {
-    event.preventDefault();
-    event.stopPropagation();
-    scrollDiff += event.wheelDelta / scrollDampening;
-  }
-  else if(type === 'slide') {
-    scrollDiff = scale(zoomSlide.value, 0, 100, scrollMin, scrollMax);
-    setTransform3dZ();
-  }
-
-  if(type !== 'slide') {
-    scrollDiff = minmax(scrollMin, scrollDiff, scrollMax);
-    setScrollControl(scale(scrollDiff, scrollMin, scrollMax, 0, 100));
+  if(!body.classList.contains('first')) {
+    if(type === 'mouse' && event) {
+      event.preventDefault();
+      event.stopPropagation();
+      scrollDiff += event.wheelDelta / scrollDampening;
+    }
+    else if(type === 'slide') {
+      scrollDiff = scale(zoomSlide.value, 0, 100, scrollMin, scrollMax);
+      setTransform3dZ();
+    }
+  
+    if(type !== 'slide') {
+      scrollDiff = minmax(scrollMin, scrollDiff, scrollMax);
+      setScrollControl(scale(scrollDiff, scrollMin, scrollMax, 0, 100));
+    }
   }
 }
 

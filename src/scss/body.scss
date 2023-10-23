@@ -40,6 +40,7 @@ body {
     &.first {
         #viewport {
             perspective: 650px;
+            cursor: inherit;
         }
         
         #floor {
@@ -60,6 +61,13 @@ body {
         
             .viewline {
                 opacity: 0;
+            }
+        }
+
+        #controls {
+            .slide.zoom {
+                filter: contrast(1.5) saturate(0);
+                opacity: 0.4;
             }
         }
 

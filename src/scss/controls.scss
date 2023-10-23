@@ -32,6 +32,10 @@
                 transform-origin: right;
                 transform: translateZ(0px) rotate(-90deg);
                 width: 400px;
+                transition: all 0.3s ease-in-out;
+                filter: contrast(1) saturate(1);
+                opacity: 1;
+                transition-property: filter, opacity;
 
                 input {
                     width: 100%;
