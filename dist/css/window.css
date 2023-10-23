@@ -95,34 +95,37 @@
           transition-delay: 1s; }
         #window > .texture img.wallslat[data-x="10"], #window > .texture img.openwindow[data-x="10"] {
           transition-delay: 1.1s; }
-  #window:hover, #window.force-expand {
+  #window.force-expand {
     --do-damp: 0; }
-    #window:hover #kinect, #window.force-expand #kinect {
+    #window.force-expand #kinect {
       transform: translateZ(40px) translateY(35px); }
-    #window:hover + #viewline1 + #viewline2, #window.force-expand + #viewline1 + #viewline2 {
+    #window.force-expand + #viewline1 + #viewline2 {
       --vl2-scale: 1; }
-    #window:hover > .texture > img[data-x="-1"], #window.force-expand > .texture > img[data-x="-1"] {
+    #window.force-expand > .texture > img[data-x="-1"] {
       transform: translate3d(0, 394px, 0px); }
-    #window:hover > .texture > img[data-x="0"], #window.force-expand > .texture > img[data-x="0"] {
+    #window.force-expand > .texture > img[data-x="0"] {
       transform: translate3d(0, 394px, 0px); }
-    #window:hover > .texture > img[data-x="1"], #window.force-expand > .texture > img[data-x="1"] {
+    #window.force-expand > .texture > img[data-x="1"] {
       transform: translate3d(0, 394px, 0px); }
-    #window:hover > .texture > img:nth-child(2), #window.force-expand > .texture > img:nth-child(2) {
+    #window.force-expand > .texture > img:nth-child(2) {
       opacity: 0;
       filter: blur(10px) brightness(0.7) saturate(0.5) drop-shadow(0px 0px 2px #161a21cf);
       transform: translate3d(0, 0px, 200px); }
-    #window:hover #tv-frame, #window.force-expand #tv-frame {
+    #window.force-expand #tv-frame {
       --tv-border-lr: calc(-12px + var(--tv-border-buffer));
-      --tv-border-tb: calc(20px + var(--tv-border-buffer)); }
-    #window:hover .contents .layer .texture, #window.force-expand .contents .layer .texture {
+      --tv-border-tb: calc(12px + var(--tv-border-buffer));
+      --tv-y-offset: -2px;
+      transition: all 0.6s ease-in-out;
+      transition-delay: 0.5s; }
+    #window.force-expand .contents .layer .texture {
       filter: drop-shadow(0px 0px 10px #161a21); }
-    #window:hover .contents #layer1, #window.force-expand .contents #layer1 {
+    #window.force-expand .contents #layer1 {
       --backset: calc(-100px * 0.5); }
-    #window:hover .contents #layer2, #window.force-expand .contents #layer2 {
+    #window.force-expand .contents #layer2 {
       --backset: calc(-200px * 0.5); }
-    #window:hover .contents #layer3, #window.force-expand .contents #layer3 {
+    #window.force-expand .contents #layer3 {
       --backset: calc(-300px * 0.5); }
-    #window:hover .contents #layer4, #window.force-expand .contents #layer4 {
+    #window.force-expand .contents #layer4 {
       --backset: calc(-400px * 0.5); }
-    #window:hover .contents #layer5, #window.force-expand .contents #layer5 {
+    #window.force-expand .contents #layer5 {
       --backset: calc(-500px * 0.5); }

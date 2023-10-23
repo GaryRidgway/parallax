@@ -18,36 +18,34 @@
     }
 
     .bottom, .top {
-        width: var(--dim-w);
+        width: calc(var(--dim-w) + 6px);
         height: var(--dim-d);
         transform-style: preserve-3d;
         background-color: #434343;
         transform-origin: center bottom;
-        transform: rotate3d(1, 0, 0, 90deg);
+        transform: translateX(-2px) translateZ(calc(-25px - var(--bevel-scale) * -1)) rotate3d(1, 0, 0, 90deg);
     }
 
     .top {
         transform-origin: center top;
-        transform: rotate3d(1, 0, 0, -90deg);
+        transform:  translateX(-2px) translateZ(calc(-25px - var(--bevel-scale) * -1)) rotate3d(1, 0, 0, -90deg);
         transition: all 0.3s ease-in-out;
         transition-property: opacity;
-        opacity: 0;
     }
 
     .left, .right {
         width: var(--dim-d);
-        height: var(--dim-h);
+        height: calc(var(--dim-h) + 4px);
         background-color: #434343;
         transform-origin: top left;
-        transform: rotate3d(0, 1, 0, 90deg) translate3d(0px, 0px, calc(var(--dim-lr-offset) * -1));
+        transform: rotate3d(0, 1, 0, 90deg) translate3d(calc(1px + var(--bevel-scale)), -2px, calc((var(--dim-lr-offset) * -1) -  calc(var(--bevel-scale) * -1)));
     }
 
     .right {
         transform-origin: top right;
-        transform: rotate3d(0, 1, 0, -90deg) translate3d(0px, 0px, calc(var(--dim-lr-offset) * -1));
+        transform: rotate3d(0, 1, 0, -90deg) translate3d(calc(-1px - var(--bevel-scale)), -2px, calc(var(--dim-lr-offset) * -1));
         transition: all 0.3s ease-in-out;
         transition-property: opacity;
-        opacity: 0;
     }
 
     .right-mask {

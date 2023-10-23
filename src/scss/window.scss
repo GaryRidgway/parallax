@@ -55,7 +55,7 @@
         }
     }
   
-    &:hover,
+    // &:hover,
     &.force-expand {
         --do-damp: 0;
     
@@ -88,8 +88,11 @@
 
         #tv-frame {
             --tv-border-lr: calc(-12px + var(--tv-border-buffer));
-            --tv-border-tb: calc(20px + var(--tv-border-buffer));
-            // --tv-scale: 2;
+            --tv-border-tb: calc(12px + var(--tv-border-buffer));
+            --tv-y-offset: -2px;
+
+            transition: all 0.6s ease-in-out;
+            transition-delay: 0.5s;
         }
   
         .contents {

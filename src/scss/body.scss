@@ -4,11 +4,11 @@ body {
     --distance: 333px;
     --distanceF: 333;
     --hypot: var(--distanceF);
-    --void: #ffdb00;
+    --void: #385270;
     --container-width: 552px;
     --container-height: 399px;
-    --tv-border-lr: 214px;
-    --tv-border-tb: 32px;
+    --tv-border-lr: 254px;
+    --tv-border-tb: 73px;
     --tv-glow-size: 20px;
     --bevel-scale: 10px;
     --bevel-offset: calc(var(--tv-glow-size) * 0.5);
@@ -18,8 +18,8 @@ body {
     --tv-bevel-color-outer: #696969;
     --image-backset-offset: 8px;
     --glow-transparency: 0.1;
-    --tv-scale: 1;
     --tv-border-buffer: 40px;
+    --tv-y-offset: 12px;
 
     height: 100vh;
     margin: 0;

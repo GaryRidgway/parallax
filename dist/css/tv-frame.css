@@ -3,7 +3,7 @@
   width: calc( var(--container-width) - 2 * var(--tv-border-lr) + 2 * var(--tv-border-buffer));
   border: 1px solid var(--void);
   border-width: var(--tv-border-tb) var(--tv-border-lr);
-  transform: translateY(calc(10px - var(--tv-border-buffer))) translateZ(-10px) scale(var(--tv-scale), var(--tv-scale));
+  transform: translateY(calc(var(--tv-y-offset) - var(--tv-border-buffer))) translateZ(-10px);
   transition: all 0.3s ease-in-out;
   transition-property: border-width, width, height, transform;
   transform-style: preserve-3d; }
