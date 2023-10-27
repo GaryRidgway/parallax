@@ -1,10 +1,14 @@
 body {
     --person-position: 0px;
     --angle: -0deg;
+    --scan-angle: -0deg;
+    --scan-slide: 0px;
     --distance: 333px;
     --distanceF: 333;
     --hypot: var(--distanceF);
     --void: #374657;
+    --text-color: #000000;
+    --text-color-2: #676767;
     --container-width: 552px;
     --container-height: 399px;
     --tv-border-lr: 254px;
@@ -16,10 +20,17 @@ body {
     --tv-bevel-color: #434343;
     --tv-bevel-color-inner: #1b1b1b;
     --tv-bevel-color-outer: #696969;
-    --image-backset-offset: 8px;
+    --image-backset-offset: 9px;
     --glow-transparency: 0.1;
     --tv-border-buffer: 40px;
     --tv-y-offset: 12px;
+    --scan-height: 268px;
+    --transition-time-short: 0.3s;
+    --transition-time-long: 0.6s;
+    --tts: var(--transition-time-short);
+    --ttse: var(--transition-time-short) ease-in-out;
+    --ttl: var(--transition-time-long);
+    --ttle: var(--transition-time-long) ease-in-out;
 
     height: 100vh;
     margin: 0;
@@ -29,10 +40,12 @@ body {
     perspective: 800px;
     background-color: var(--void);
     overflow: hidden;
+    left: 0;
+    position: relative;
 
     &.transitory {
         #floor {
-          transition: transform 0.6s ease-in-out;
+          transition: transform var(--ttl) ease-in-out;
           transition-property: transform, opacity, filter, transform-origin;
         }
     }

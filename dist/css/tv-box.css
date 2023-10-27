@@ -21,7 +21,7 @@
   #tv-box .top {
     transform-origin: center top;
     transform: translateX(-2px) translateZ(calc(-25px - var(--bevel-scale) * -1)) rotate3d(1, 0, 0, -90deg);
-    transition: all 0.3s ease-in-out;
+    transition: all var(--tts) ease-in-out;
     transition-property: opacity; }
   #tv-box .left, #tv-box .right {
     width: var(--dim-d);
@@ -32,7 +32,7 @@
   #tv-box .right {
     transform-origin: top right;
     transform: rotate3d(0, 1, 0, -90deg) translate3d(calc(-1px - var(--bevel-scale)), -2px, calc(var(--dim-lr-offset) * -1));
-    transition: all 0.3s ease-in-out;
+    transition: all var(--tts) ease-in-out;
     transition-property: opacity; }
   #tv-box .right-mask {
     height: var(--dim-d);
@@ -58,5 +58,5 @@
     background-color: var(--void);
     bottom: 100%;
     transform: translateY(0px);
-    transition: all 0.3s ease-in-out;
+    transition: all var(--tts) ease-in-out;
     transition-property: transform; }

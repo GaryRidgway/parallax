@@ -4,7 +4,7 @@
     transform: translateZ(4px) translateY(35px);
     transform-origin: top center;
     transform-style: preserve-3d;
-    transition: all 0.3s ease-in-out;
+    transition: all var(--tts) ease-in-out;
     transition-property: transform;
 
     .kinect-inner {
@@ -52,5 +52,159 @@
             width: 3619px * 0.2;
             height: 848px * 0.2;
         }
+    }
+
+    body:not(.first) #window.force-expand &.show-scan .kinect-scan {
+        transform:
+            translate3d(0px, 3px, -2px)
+            translateX(-50%)
+            rotate3d(1, 0, 0, 54deg)
+            translate3d(0px, 0px, 0px)
+            scale(1);
+        &-to {
+            transform:
+                translate3d(0px, -35px, -54px)
+                translateX(-50%)
+                rotate3d(1, 0, 0, 54deg)
+                translate3d(var(--scan-slide), 63px, 0px)
+                skewX(var(--scan-angle))
+                scale(1, 1);
+            transition-delay: 0s;
+        }
+
+        &-from {
+            transform:
+                translate3d(0px, -35px, -54px)
+                translateX(-50%)
+                rotate3d(1, 0, 0, 54deg)
+                skewX(var(--scan-angle))
+                translate3d(0px, 458px, 0px)
+                scale(1, 1);
+            transition-delay: 0s;
+        }
+
+        
+    }
+
+    body:not(.first) #window.transitory.force-expand &.show-scan .kinect-scan {
+        transition: all var(--ttl) ease-in-out;
+
+        &-to {
+            transition: all var(--tts) ease-in-out;
+            transition-delay: 0s;
+        }
+
+        &-from {
+            transition: all var(--tts) ease-in-out;
+            transition-delay: var(--tts);
+        }
+    }
+
+    .kinect-scan {
+
+        #window.transitory & {
+            transition: all var(--ttl) ease-in-out;
+
+            &-to {
+                transition: all var(--tts) ease-in-out;
+                transition-delay: var(--tts);
+            }
+
+            &-from {
+                transition: all var(--tts) ease-in-out;
+                transition-delay: 0s;
+            }
+        }
+
+        transition: none;
+        transition-property: transform, opacity;
+        animation-iteration-count: infinite;
+        animation-name: scan;
+        animation-duration: 1s;
+        position: absolute;
+        width: 74px;
+        height: 0;
+        opacity: 0;
+        transform-origin: top;
+        transform:
+            translate3d(0px, 3px, -2px)
+            translateX(-50%)
+            rotate3d(1, 0, 0, 54deg)
+            translate3d(0px, -15px, 0px)
+            scale(0);
+        border: var(--scan-height) solid transparent;
+        border-top-width: 0px;
+        border-bottom-width: 770px;
+        border-bottom-color: lightblue;
+        border-bottom-color: #49a1ff;
+        
+
+        &-to, &-from {
+            width: 21px;
+            border-left-width: 0px;
+            border-right-width: 0px;
+        }
+
+        &-to {
+            transition-property: transform, opacity;
+            border-bottom-width: 394px;
+            border-bottom-color: #d8e5ff;
+            animation-name: scanFound;
+            transform:
+                translate3d(0px, -35px, -54px)
+                translateX(-50%)
+                rotate3d(1, 0, 0, 54deg)
+                translate3d(0px, 63px, 0px)
+                skewX(var(--scan-angle))
+                scale(1, 0);
+        }
+
+        &-from {
+            transition-property: transform, opacity;
+            transform:
+                translate3d(0px, -35px, -54px)
+                translateX(-50%)
+                rotate3d(1, 0, 0, 54deg)
+                skewX(var(--scan-angle))
+                translate3d(0px, 458px, 0px)
+                scale(1, 0);
+            border-bottom-width: 380px;
+            border-bottom-color: #000000;
+            animation: none;
+            opacity: 0.2;
+            
+        }
+
+        
+    }
+}
+
+@keyframes scan {
+    0% {
+        opacity: 0.16;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0.16;
+    }
+}
+
+@keyframes scanFound {
+    0% {
+        opacity: 0.36;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0.36;
+    }
+}
+
+@keyframes scanReset {
+    0% {
+        opacity: 0;
     }
 }

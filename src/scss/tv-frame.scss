@@ -15,7 +15,7 @@
         translateY(calc(var(--tv-y-offset) - var(--tv-border-buffer)))
         // translateX(calc(var(--tv-border-buffer) * -0.5))
         translateZ(-10px);
-    transition: all 0.3s ease-in-out;
+    transition: all var(--tts) ease-in-out;
     transition-property: border-width, width, height, transform;
     transform-style: preserve-3d;
 

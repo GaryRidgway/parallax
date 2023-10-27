@@ -20,6 +20,8 @@
     <link type="text/css" rel="stylesheet" href="./dist/css/secondary-floor.css">
     <link type="text/css" rel="stylesheet" href="./dist/css/tv-box.css">
     <link type="text/css" rel="stylesheet" href="./dist/css/tv-frame.css">
+    <link type="text/css" rel="stylesheet" href="./dist/css/leaves.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Cinzel+Decorative&family=Major+Mono+Display&family=Raleway:wght@100&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
@@ -66,6 +68,12 @@
               </div>
             </div>
             <div id='kinect'>
+              <div class='kinect-scan'>
+              </div>
+              <div class='kinect-scan kinect-scan-to'>
+              </div>
+              <div class='kinect-scan kinect-scan-from'>
+              </div>
               <div class='kinect-inner'>
                 <div class='front'>
                   <img src="src/assets/kinectFront.png">
@@ -85,6 +93,9 @@
               <div class='texture'>
                 <img src='src/assets/layer1.png'>
               </div>
+            </div>
+            <div id='layer1-1' class='layer p5-canvas'>
+              <iframe src="/leavesSim/index.html" title="W3Schools Free Online Web Tutorials"></iframe>
             </div>
             <div id='layer2' class='layer'>
               <div class='texture'>
@@ -214,10 +225,21 @@
       <label>First person</label>
       <input type="checkbox" id="firstPerson" onclick="goFirstPerson()">
     </div>
-    <div class='control-container check'>
-      <label>Expand frame</label>
-      <input type="checkbox" id="expand" onclick="forceExpand()">
+    <div class="expanded">
+      <div class='control-container check'>
+        <label>Expand frame</label>
+        <input type="checkbox" id="expand" onclick="forceExpand()">
+      </div>
+      <div class='control-container check secondary'>
+        <label>Kinect tracking</label>
+        <input type="checkbox" id="scan" onclick="kinectTracking()">
+      </div>
+      <div class='control-container check secondary'>
+        <label>Leaves</label>
+        <input type="checkbox" checked id="leaves" onclick="displayLeaves()">
+      </div>
     </div>
+    
     <div class='control-container slide'>
       <label>Person position</label>
       <input type="range" min="-163" max="163" value="0" step='0.2' class="slider" id="personPosition" onchange="slidePerson();" oninput="slidePerson()">

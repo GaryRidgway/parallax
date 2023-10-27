@@ -15,7 +15,7 @@
     justify-content: center; }
     #window > .texture img {
       width: 50%;
-      transition: transform 0.3s ease-in-out;
+      transition: transform var(--tts) ease-in-out;
       transition-property: transform, opacity, filter;
       bottom: 0;
       aspect-ratio: 53 / 130; }
@@ -115,12 +115,14 @@
       --tv-border-lr: calc(-12px + var(--tv-border-buffer));
       --tv-border-tb: calc(12px + var(--tv-border-buffer));
       --tv-y-offset: -2px;
-      transition: all 0.6s ease-in-out;
+      transition: all var(--ttl) ease-in-out;
       transition-delay: 0.5s; }
     #window.force-expand .contents .layer .texture {
       filter: drop-shadow(0px 0px 10px #161a21); }
     #window.force-expand .contents #layer1 {
       --backset: calc(-100px * 0.5); }
+    #window.force-expand .contents #layer1-1 {
+      --backset: calc(-150px * 0.5); }
     #window.force-expand .contents #layer2 {
       --backset: calc(-200px * 0.5); }
     #window.force-expand .contents #layer3 {

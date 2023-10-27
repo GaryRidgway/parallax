@@ -1,0 +1,19 @@
+#layer1-1.p5-canvas {
+
+    opacity: 0;
+    transition: opacity var(--ttse);
+    
+    &.show-leaves {
+        opacity: 1;
+    }
+
+    iframe {
+        position: absolute;
+        width: calc(100% + 300px);
+        height: calc(100% + 200px);
+        border: 0;
+        bottom: 0;
+        left: 0;
+        top: unset;
+    }
+}

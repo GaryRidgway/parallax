@@ -25,7 +25,7 @@
         transform-origin: right;
         transform: translateZ(0px) rotate(-90deg);
         width: 400px;
-        transition: all 0.3s ease-in-out;
+        transition: all var(--tts) ease-in-out;
         filter: contrast(1) saturate(1);
         opacity: 1;
         transition-property: filter, opacity; }
@@ -43,5 +43,46 @@
         left: 20px; }
     #controls .control-container.check {
       padding: 15px 30px; }
+  #controls .expanded {
+    display: flex; }
+    #controls .expanded .control-container {
+      margin-right: 0; }
+      #controls .expanded .control-container:first-child {
+        z-index: 2; }
+      #controls .expanded .control-container.secondary {
+        position: absolute;
+        padding: 10px 15px;
+        justify-content: center;
+        align-self: center;
+        transform: translateX(0);
+        left: 0;
+        transition: all var(--tts) ease-in-out; }
+        #controls .expanded .control-container.secondary:before {
+          content: '';
+          position: absolute;
+          height: 8px;
+          width: 40px;
+          background-color: #fafeff;
+          z-index: -1;
+          right: 100%;
+          top: calc(50% - 3px);
+          transform: scaleX(0);
+          transform-origin: right;
+          transition: transform var(--ttse); }
+        #controls .expanded .control-container.secondary label {
+          margin-bottom: 5px;
+          margin-top: 2px;
+          font-size: 0.95rem;
+          color: var(--text-color-2); }
+        #controls .expanded .control-container.secondary input[type="checkbox"] {
+          transform: scale(1); }
+      #controls .expanded .control-container.checked ~ .secondary:before {
+        transform: scaleX(1); }
+      #controls .expanded .control-container.checked ~ .secondary:nth-child(2) {
+        z-index: 1;
+        transform: translateX(calc(100% + 40px)); }
+      #controls .expanded .control-container.checked ~ .secondary:nth-child(3) {
+        z-index: 0;
+        transform: translateX(calc(345% + 40px)); }
   #controls #personPosition {
     width: 400px; }

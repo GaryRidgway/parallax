@@ -32,7 +32,7 @@
                 transform-origin: right;
                 transform: translateZ(0px) rotate(-90deg);
                 width: 400px;
-                transition: all 0.3s ease-in-out;
+                transition: all var(--tts) ease-in-out;
                 filter: contrast(1) saturate(1);
                 opacity: 1;
                 transition-property: filter, opacity;
@@ -61,6 +61,74 @@
 
         &.check {
             padding: 15px 30px;
+        }
+    }
+
+
+
+    .expanded {
+        display: flex;
+
+        .control-container {
+            margin-right: 0;
+
+            &:first-child {
+                z-index: 2;
+            }
+
+            &.secondary {
+                position: absolute;
+                padding: 10px 15px;
+                justify-content: center;
+                align-self: center;
+                transform: translateX(0);
+                left: 0;
+                transition: all var(--tts) ease-in-out;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    height: 8px;
+                    width: 40px;
+                    background-color: #fafeff;
+                    z-index: -1;
+                    right: 100%;
+                    top: calc(50% - 3px);
+                    transform: scaleX(0);
+                    transform-origin: right;
+                    transition: transform var(--ttse);
+                }
+
+                label {
+                    margin-bottom: 5px;
+                    margin-top: 2px;
+                    font-size: 0.95rem;
+                    color: var(--text-color-2);
+                }
+
+                input[type="checkbox"] {
+                    transform: scale(1);
+                }
+            }
+            
+            &.checked {
+                & ~ .secondary {
+
+                    &:before {
+                        transform: scaleX(1);
+                    }
+
+                    &:nth-child(2) {
+                        z-index: 1;
+                        transform: translateX(calc(100% + 40px));
+                    }
+
+                    &:nth-child(3) {
+                        z-index: 0;
+                        transform: translateX(calc(345% + 40px));
+                    }
+                }
+            }
         }
     }
   
