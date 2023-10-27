@@ -78,9 +78,23 @@ function checkProd() {
     if (debug.doProdDebug) {
         debug = prodDebug;
     }
-    console.log('prodChecked');
 }
 checkProd();
+asyncDelay(500, function () {
+    checkProd();
+
+    asyncDelay(500, function () {
+        checkProd();
+
+        asyncDelay(500, function () {
+            checkProd();
+
+            asyncDelay(500, function () {
+                checkProd();
+            });
+        });
+    });
+});
 
 if (debug.centerSpawn) {
     spawnArea = debug.centerSpawnArea;
