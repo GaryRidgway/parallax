@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>LEAVES</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js" integrity="sha512-WJXVjqeINVpi5XXJ2jn0BSCfp0y80IKrYh731gLRnkAS9TKc5KNt/OfLtu+fCueqdWniouJ1ubM+VI/hbo7POQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="js/config.variables.js"></script>
+        <script src="js/debug.variables.js"></script>
+        <script src="js/particle.js"></script>
+        <script src="js/leavesHelpers.js"></script>
+        <script src="js/leaves.js"></script>
+        <div id="leafSim">
+            <div id="leafCanvasContainer">
+                <div id="canvasSpace"></div>
+                <div id="canvasCompanion"></div>
+            </div>
+            <div class="debugData">
+                <div class="debug-value fps">
+                    <div class="prefix">FPS :&nbsp;</div>
+                    <div class="value"></div>
+                </div>
+                <div class="debug-value spawnRate">
+                    <div class="prefix">Spawn rate :&nbsp;</div>
+                    <div class="value"></div>
+                    <div class="suffix">/s</div>
+                </div>
+                <div class="debug-value max-particles">
+                    <div class="prefix">Max particles :&nbsp;</div>
+                    <div class="value"></div>
+                </div>
+                <div class="debug-value particles">
+                    <div class="prefix">Current particles :&nbsp;</div>
+                    <div class="value"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+

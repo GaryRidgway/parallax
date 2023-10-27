@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  transform: translate3d(0,0,0);
+}
+
+#leafCanvasContainer {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#leafSim {
+  position: relative;
+}
+.debugData {
+  position: absolute;
+}
+
+.debugData.hidden {
+  display: none;
+}
+.debug-value {
+  display: flex;
+}
+
+#canvasCompanion {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  overflow: hidden;
+}
+
+.leaf {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  filter: drop-shadow(0 0 0.2rem rgb(13, 13, 13));
+}
+
+.leaf img {
+  /* display: none; */
+  position: absolute;
+  width: 100px;
+  height: auto;
+  left: -50px;
+  top: -50px;
+}
+
+.transform-origin {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  left: -20px;
+  top: -20px;
+  display: none;
+}
+
+.transform-origin:before, .transform-origin:after {
+  position:absolute;
+  content: '';
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+
+.transform-origin:before {
+  height: 100%;
+  width: 2px;
+  left: calc(50% - 1px);
+}
+
+.transform-origin:after {
+  height: 2px;
+  width: 100%;
+  top: calc(50% - 1px);
+}
+
+.debugData {
+  color: #fafafa;
+  padding: 1rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
