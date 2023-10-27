@@ -73,9 +73,14 @@ let prodDebug = {
     clearCanvas: true,
 };
 
-if (debug.doProdDebug) {
-    debug = prodDebug;
+
+function checkProd() {
+    if (debug.doProdDebug) {
+        debug = prodDebug;
+    }
+    console.log('prodChecked');
 }
+checkProd();
 
 if (debug.centerSpawn) {
     spawnArea = debug.centerSpawnArea;

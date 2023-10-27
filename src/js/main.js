@@ -11,6 +11,7 @@ let personSlider;
 let person;
 let kinect;
 let leaves;
+let leavesFrame;
 let lines;
 let scanTo;
 let scanFrom;
@@ -37,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     person = document.getElementById("person");
     kinect = document.getElementById("kinect");
     leaves = document.getElementById("layer1-1");
+    leavesFrame = document.querySelector("#layer1-1 iframe");
     lines = document.querySelectorAll(".viewline .texture");
 
     scanTo = document.querySelectorAll(".kinect-scan.kinect-scan-to");
@@ -50,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     initMovement();
     preCheck();
+    leavesProdCheck();
     goFirstPerson();
 });
 
@@ -64,7 +67,6 @@ function goFirstPerson() {
 }
 
 function makeTransitory(element, time) {
-  console.log(element);
   element.classList.add("transitory");
   asyncDelay(time, function () {
     element.classList.remove("transitory");
@@ -140,11 +142,8 @@ function calcPlanePos(y, angle) {
 }
 
 function hypot(a, b) {
-  console.log(a, b);
   const leftSum = Math.pow(a, 2) + Math.pow(b, 2);
-  console.log(leftSum);
   const c = Math.sqrt(leftSum);
-  console.log(c);
   return c;
 }
 
@@ -178,4 +177,10 @@ function preCheck() {
   forceExpand();
   kinectTracking();
   displayLeaves();
+}
+
+function leavesProdCheck() {
+  leavesFrame.addEventListener("load", function(event) {
+    leavesFrame.contentWindow.checkProd();
+  });
 }
