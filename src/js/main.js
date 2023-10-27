@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     initMovement();
     preCheck();
-    leavesProdCheck();
+    // leavesProdCheck();
     goFirstPerson();
 });
 

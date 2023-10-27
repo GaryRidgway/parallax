@@ -73,28 +73,31 @@ let prodDebug = {
     clearCanvas: true,
 };
 
+// Just gonna hard set it.
+debug = prodDebug;
 
-function checkProd() {
-    if (debug.doProdDebug) {
-        debug = prodDebug;
-    }
-}
-checkProd();
-asyncDelay(500, function () {
-    checkProd();
 
-    asyncDelay(500, function () {
-        checkProd();
+// function checkProd() {
+//     if (debug.doProdDebug) {
+//         debug = prodDebug;
+//     }
+// }
+// checkProd();
+// asyncDelay(500, function () {
+//     checkProd();
 
-        asyncDelay(500, function () {
-            checkProd();
+//     asyncDelay(500, function () {
+//         checkProd();
 
-            asyncDelay(500, function () {
-                checkProd();
-            });
-        });
-    });
-});
+//         asyncDelay(500, function () {
+//             checkProd();
+
+//             asyncDelay(500, function () {
+//                 checkProd();
+//             });
+//         });
+//     });
+// });
 
 if (debug.centerSpawn) {
     spawnArea = debug.centerSpawnArea;
