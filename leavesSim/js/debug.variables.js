@@ -1,4 +1,5 @@
 p5.disableFriendlyErrors = true;
+
 // Debug variables
 let debug = {
     doProdDebug: true,
