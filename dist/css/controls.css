@@ -10,7 +10,8 @@
     background-color: #fafafa;
     margin: 20px;
     border-radius: 40px;
-    width: fit-content; }
+    width: fit-content;
+    font-size: 1rem; }
     #controls .control-container label {
       margin-bottom: 10px;
       font-family: "Raleway", Tofu; }
