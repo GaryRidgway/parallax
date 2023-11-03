@@ -31,7 +31,7 @@ body {
   --ttse: var(--transition-time-short) ease-in-out;
   --ttl: var(--transition-time-long);
   --ttle: var(--transition-time-long) ease-in-out;
-  height: 100vh;
+  height: 100dvh;
   margin: 0;
   display: flex;
   justify-content: center;
