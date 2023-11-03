@@ -40,7 +40,8 @@ body {
   background-color: var(--void);
   overflow: hidden;
   left: 0;
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
   body.transitory #floor {
     transition: transform var(--ttl) ease-in-out;
     transition-property: transform, opacity, filter, transform-origin; }

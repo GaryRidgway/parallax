@@ -20,12 +20,12 @@
     #controls .control-container.slide {
       padding: 15px 55px; }
       #controls .control-container.slide.zoom {
-        right: 25px;
+        right: 0;
         position: fixed;
-        top: calc(50% - 200px);
-        transform-origin: right;
+        top: 0px;
+        transform-origin: calc(100% - 25px);
         transform: translateZ(0px) rotate(-90deg);
-        width: 400px;
+        width: calc(100vh - 55px - 55px - 20px - 20px);
         transition: all var(--tts) ease-in-out;
         filter: contrast(1) saturate(1);
         opacity: 1;
@@ -77,12 +77,12 @@
           color: var(--text-color-2); }
         #controls .expanded .control-container.secondary input[type="checkbox"] {
           transform: scale(1); }
-      #controls .expanded .control-container.checked ~ .secondary:before {
+      #controls .expanded .control-container.checked:first-child ~ .secondary:before {
         transform: scaleX(1); }
-      #controls .expanded .control-container.checked ~ .secondary:nth-child(2) {
+      #controls .expanded .control-container.checked:first-child ~ .secondary:nth-child(2) {
         z-index: 1;
         transform: translateX(calc(100% + 40px)); }
-      #controls .expanded .control-container.checked ~ .secondary:nth-child(3) {
+      #controls .expanded .control-container.checked:first-child ~ .secondary:nth-child(3) {
         z-index: 0;
         transform: translateX(calc(345% + 40px)); }
   #controls #personPosition {

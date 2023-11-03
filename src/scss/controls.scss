@@ -27,12 +27,12 @@
             padding: 15px 55px;
 
             &.zoom {
-                right: 25px;
+                right: 0;
                 position: fixed;
-                top: calc(50% - 200px);
-                transform-origin: right;
+                top: 0px;
+                transform-origin: calc(100% - 25px);
                 transform: translateZ(0px) rotate(-90deg);
-                width: 400px;
+                width: calc(100vh - 55px - 55px - 20px - 20px);
                 transition: all var(--tts) ease-in-out;
                 filter: contrast(1) saturate(1);
                 opacity: 1;
@@ -112,7 +112,7 @@
                 }
             }
             
-            &.checked {
+            &.checked:first-child {
                 & ~ .secondary {
 
                     &:before {
