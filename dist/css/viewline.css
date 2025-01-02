@@ -2,10 +2,10 @@
   --spacingval: 0px;
   position: absolute;
   width: 100%;
-  height: calc(100% - var(--spacingval) * 2);
+  height: calc(136% - var(--spacingval) * 2);
   bottom: 0;
   top: 17px;
-  transform: translate3d(0px, calc(50% + var(--spacingval)), 215px);
+  transform: translate3d(0px, calc(27% + var(--spacingval)), 215px);
   pointer-events: none;
   transform-style: preserve-3d;
   transition: all var(--ttl) ease-in-out;
@@ -36,7 +36,7 @@
 #viewline2 {
   --vl2-scale: 0;
   transform-origin: top;
-  transform: translate3d(0px, calc(50% + var(--spacingval)), 215px) rotate3d(0, 0, 1, 180deg); }
+  transform: translate3d(0px, calc(27% + var(--spacingval)), 215px) rotate3d(0, 0, 1, 180deg); }
   #viewline2 .texture {
     height: 100%;
     width: 100%;

@@ -1,4 +1,5 @@
 .secondary-floor {
+  --dist: 353px;
   position: absolute;
   width: 400px;
   height: 1000px; }
@@ -10,13 +11,13 @@
       height: 100%;
       object-fit: cover; }
   .secondary-floor[data-x="1"] {
-    left: 399px; }
+    left: calc(var(--dist)*1); }
   .secondary-floor[data-x="2"] {
-    left: 798px; }
+    left: calc(var(--dist)*2); }
   .secondary-floor[data-x="3"] {
-    left: 1197px; }
+    left: calc(var(--dist)*3); }
   .secondary-floor[data-x="4"] {
-    left: 1596px; }
+    left: calc(var(--dist)*4); }
   .secondary-floor[data-x="5"] {
     left: 1995px; }
   .secondary-floor[data-x="6"] {
